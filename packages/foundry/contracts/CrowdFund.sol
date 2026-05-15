@@ -62,13 +62,13 @@ contract CrowdFund {
         if (!openToWithdraw) revert NotOpenToWithdraw();
         uint256 amount = balances[msg.sender];
         balances[msg.sender] = 0;
-        (bool ok,  ) = msg.sender.call{value: amount}("");
+        (bool ok,) = msg.sender.call{ value: amount }("");
         if (!ok) revert WithdrawTransferFailed(msg.sender, amount);
     }
 
     function execute() public {
         if (block.timestamp <= deadline) revert TooEarly(deadline, block.timestamp);
-        if (address(this).balance >= threshold) fundingRecipient.complete{value: address(this).balance}();
+        if (address(this).balance >= threshold) fundingRecipient.complete{ value: address(this).balance }();
         else openToWithdraw = true;
     }
 
