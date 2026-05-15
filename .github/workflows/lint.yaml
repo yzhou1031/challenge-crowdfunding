@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
+        with:
+          submodules: recursive
 
       - name: Setup node env
         uses: actions/setup-node@v3
@@ -47,4 +49,5 @@ jobs:
 
       - name: Check typings on nextjs
         run: yarn next:check-types
+
 
