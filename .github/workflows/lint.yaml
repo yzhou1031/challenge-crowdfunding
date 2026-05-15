@@ -34,6 +34,8 @@ jobs:
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: nightly
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run foundry node, deploy contracts (& generate contracts typescript output)
         env:
@@ -45,3 +47,4 @@ jobs:
 
       - name: Check typings on nextjs
         run: yarn next:check-types
+
