@@ -1,0 +1,10 @@
+{
+  "challenge": "crowdfunding",
+  "startedAt": "2026-04-25T00:00:00.000Z",
+  "checkpoints": {
+    "contributing": { "status": "completed", "method": "coded" },
+    "withdrawing": { "status": "completed", "method": "coded" },
+    "state-machine": { "status": "completed", "method": "coded" },
+    "receive-function": { "status": "completed", "method": "coded" }
+  }
+}

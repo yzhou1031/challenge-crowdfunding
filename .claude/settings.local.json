@@ -1,6 +1,15 @@
 {
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "context7"
+  ],
   "allowedTools": [
     "Write(.challenge-ai/**)",
     "Edit(.challenge-ai/**)"
-  ]
+  ],
+  "permissions": {
+    "allow": [
+      "Bash(yarn test *)"
+    ]
+  }
 }
